@@ -5,8 +5,8 @@ package Equals;
  *//*  The == operator compares an objects location in memory.
     The default implementation of .equals also compares the memory location.
     Sometimes we want .equals to compare the objects state (data) instead -> we can do this by overriding the equals method to compare the objects fields.
-    If we override .equals we also need to override hashCode so that it generates an equal hashcode for equal objects. This is important for hash based collections (eg. HashMap etc).
-    When overriding hashCode you need to use the same set of fields used to compute .equals.
+    If we override .equals we also need to override hashCode so that it generates an equal hashcode for equal objects. This is especially    important for hash based collections (eg. HashMap etc).
+    When overriding hashCode you need to use the same set of fields used to compute .equals. See Alien class for implementation of hashCode.
     Ensure that an appropriate definition of equals is implemented if Objects are placed in java collections (Lists, Sets, Maps).
  */
 //To facilitate overriding equals, we can create an Equal class.

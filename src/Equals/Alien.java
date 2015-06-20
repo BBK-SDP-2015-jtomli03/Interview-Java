@@ -24,6 +24,7 @@ public class Alien {
         this.legLengths = legLengths;
     }
 
+    //better to use Apache Commons EqualsBuilder to override equals.
     //start with the fields that have the most significance first, ie. ==, instanceOf, fields.
     @Override
     public boolean equals(Object object){
@@ -43,5 +44,25 @@ public class Alien {
         //note; the last comparison uses the method Arrays.equal for comparison of the array legLengths (ie. use this method for comparing arrays)
         return equal(this.colour, alien.colour) && equal(this.colourOfSpots, alien.colourOfSpots) && equal(this.numberOfEyes, alien.numberOfEyes) &&
                 equal(this.fromZorb, alien.fromZorb) && Arrays.equals(this.legLengths, alien.legLengths);
+    }
+
+    //best to implement hashCode using Apache Commons HashCodeBuilder or an IDE.
+    //To implement yourself;
+    // 1) Take a prime number as a hash to result in a distinct hashCode for a distinct object.
+    // 2) Take a different prime number as a multiplier.
+    // 3) Compute the hashCode for each field that is used in equals, and add to the hash to calculate the final hash.
+    // Check each field for null first to avoid a NullPointerException -> if a field is null then return zero.
+    // If a field is a numeric data type simply convert to int, and add to the hash.
+    // If the object is immutable then you can calculate the hashCode once and then cache it for increased performance.
+    @Override
+    public int hashCode(){
+        int hash = 17;
+        int result = 3;
+        result = hash * result + (colour == null? 0 : colour.hashCode());
+        result = hash * result + (colourOfSpots == null? 0 : colourOfSpots.hashCode());
+        result = hash * result + numberOfEyes;
+        result = hash * result + (fromZorb? 0 : 7);
+        result = hash * result + (legLengths == null? 0 : legLengths.hashCode());
+        return result;
     }
 }
