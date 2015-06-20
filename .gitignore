@@ -1,0 +1,9 @@
+*.class
+*.txt
+*.sml
+*.iml
+*.classpath
+*.name
+*.xml
+*.project
+*.prefs
