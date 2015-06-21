@@ -54,6 +54,7 @@ public class Alien {
     // Check each field for null first to avoid a NullPointerException -> if a field is null then return zero.
     // If a field is a numeric data type simply convert to int, and add to the hash.
     // If the object is immutable then you can calculate the hashCode once and then cache it for increased performance.
+    // To see how to cache the hashCode see the example in the class ImmutableAlien in package Immutable.
     @Override
     public int hashCode(){
         int hash = 17;

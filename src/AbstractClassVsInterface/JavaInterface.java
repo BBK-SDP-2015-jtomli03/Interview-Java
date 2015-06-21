@@ -5,7 +5,7 @@ package AbstractClassVsInterface;
  */
 /*
 Java 8 changed the capabilities of interfaces to align them more with abstract classes, but there are still distinct differences.
-Reminder -  a class must be declared abstract it if contains one or more abstract methods (ie a method signature without a body).
+Reminder -  a class must be declared abstract if it contains one or more abstract methods (ie a method signature without a body).
 An abstract class cannot be instantiated, it can only be used as a superclass.
 
  PRE-JAVA 8 - DIFFERENCES BETWEEN ABSTRACT CLASSES AND INTERFACES;
