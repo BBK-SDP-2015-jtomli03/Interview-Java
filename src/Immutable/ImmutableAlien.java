@@ -57,7 +57,7 @@ public final class ImmutableAlien {
     }
 
     //lazy initialization of hashCode (ie, initially not calculated until it is requested)
-    //and caching of the hashCode so that it is only ever calculated once (to increase performance) -> note hashCode is a private final field.
+    //and caching of the hashCode so that it is only ever calculated once (to increase performance) -> note hashCode is cached as a private volatile field.
     @Override
     public int hashCode(){
         //if hashCode != 0 then it has already been calculated and cached (as the variable hashCode), so return the cached result.
@@ -68,7 +68,7 @@ public final class ImmutableAlien {
         result = hash * result + dateOfDiscovery.hashCode(); //note date cannot be null.
         result = hash * result + (colour == null? 0 : colour.hashCode());
         result = hash * result + numberOfEyes;
-        hashCode = result;
+        hashCode = result; //cache in the field hashCode.
         return result;
     }
 }
