@@ -26,14 +26,15 @@ package BigO;
     a total of n operations takes place. This results in (n * log n) operations, e.g. O(n log n).
 
 
-    O(n2) - quadratic time - slow! eg two loops, eg bubblesort - we go through the list and compare each element with the one next
+    O(n^2) - quadratic time - slow! eg two loops, eg bubblesort - we go through the list and compare each element with the one next
     to it, swapping the elements if they are out of order. At the end of the first iteration, we then start again from
     the beginning, with the caveat that we now know the last element is correct. However, best case of bubblesort is O(n)
     if the list to sort is already sorted.
+        .....so O(n^3) would be if 3 "for" loops were nested, etc.
 
-    O(2n) - exponential growth - the algorithm takes twice as long for every new element added.
+    O(2^n) - exponential growth - the algorithm takes twice as long for every new element added.
 
-    ### ARRAYLIST VS LINKED LIST FOR ACCESS ####
+    ### ARRAYLIST VS LINKED LIST FOR GET ####
 
     ARRAYLIST = O(1)
     LINKED LIST = O(n)
@@ -43,9 +44,9 @@ package BigO;
     ARRAYLIST - insertion at end of list average = O(1) because the computer already knows where the end of the list is
                           but worst case = O(n) because if the capacity of the arraylist has run out it will need to be
                                            resized prior to the insertion. If you know roughly how large your arraylist
-                                           will be, then to try to improve performance so that insertions are O(1), then
-                                           INITIALIZE the arraylist to that certain size so that it doesn't need to resize on
-                                           insertion, or so that this will be an infrequent occurrence.
+                                           will be, then to try to improve performance so that insertions are O(1) by
+                                           INITIALIZING the arraylist to the expected size so that it doesn't need to
+                                           resize on insertion, or so that this will be an infrequent occurrence.
               - insertion anywhere else in the list = O(n)
 
     LINKED LIST - insertion at the beginning of the list = O(1) because we just need to change the pointer of the first
@@ -75,7 +76,7 @@ ArrayList	        O(1)	    O(1)	    O(n)	    O(n)
 LinkedList	        O(n)	    O(1)	    O(1)	    O(n)
 HashSet	            O(1)	    O(1)	    O(1)	    O(1)
 LinkedHashSet	    O(1)	    O(1)	    O(1)	    O(1)
-TreeSet	            O(log n)	O(log n)	O(log n)	O(log n
+TreeSet	            O(log n)	O(log n)	O(log n)	O(log n)
 
 MAPS
 Structure	        get	        put	        remove	    containsKey

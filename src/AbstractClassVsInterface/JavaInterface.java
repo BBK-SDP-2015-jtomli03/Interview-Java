@@ -58,7 +58,7 @@ An abstract class cannot be instantiated, it can only be used as a superclass.
         * If the implementing class has overridden the default method, then this implementation is used.
         * If the class doesn't provide its own implementation then an error will occur.
         * If one interface inherits another, then the inheriting interfaces default method takes precedence.
-            eg if interface B extends interface A, then interfaces B's default method will be used.
+            eg if interface B extends interface A, then interface B's default method will be used.
  3) Java 8 interfaces can have static methods.
  4) Java 8 interface methods are still inherently public, and the variables are public static final, whereas abstract class
     methods can be public, protected, or private, and its variables can be static, final, or static final.
